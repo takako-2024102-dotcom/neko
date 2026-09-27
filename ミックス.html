@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜ミックス</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="type-detail.css">
+  <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+</head>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/detail.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<body class="types">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<main class="type-detail-main">
+
+  <h2>ミックス</h2>
+
+  <div class="type-top">
+
+    <img src="images/2ミックス.jpg"
+         alt="ミックス猫"
+         class="type-image">
+
+    <section class="basic-info">
+      <dl>
+        <dt>品種</dt>
+        <dd>ミックス</dd>
+
+        <dt>性格</dt>
+        <dd>
+          穏やかでおっとりしている<br>
+          人懐っこく甘えん坊<br>
+          静かな環境を好む
+        </dd>
+
+        <dt>鳴く頻度</dt>
+        <dd>
+          比較的少なめ<br>
+          小さく控えめな声<br>
+          必要なときだけ鳴く
+        </dd>
+
+        <dt>平均体重</dt>
+        <dd>3〜5kg</dd>
+
+        <dt>平均寿命</dt>
+        <dd>10〜15年</dd>
+
+        <dt>名前の由来</dt>
+        <dd>複数の品種が混ざって生まれたことから</dd>
+      </dl>
+    </section>
+
+  </div>
+
+  <section class="feature">
+    <h3>ミックスの特徴</h3>
+
+    <p>
+      ミックスは、
+      <span class="highlight">特定の品種に属さない猫</span>です。
+      見た目や性格には大きな個体差があります。
+    </p>
+
+    <p>
+      さまざまな品種の特徴を持ち合わせており、
+      <span class="highlight">世界に一匹だけの個性</span>が魅力です。
+    </p>
+
+    <p>
+      環境への適応力が高く、
+      人と一緒に暮らすことに慣れやすい傾向があります。
+    </p>
+
+    <p>
+      比較的丈夫な体をしている子が多く、
+      <span class="highlight">健康面での不安が少ない</span>とも言われています。
+    </p>
+
+    <p>
+      飼い主との関係性によって性格がよりはっきりし、
+      <span class="highlight">深い信頼関係</span>を築きやすい猫です。
+    </p>
+  </section>
+
+<button class="back-button" onclick="history.back()">← 種類一覧に戻る</button>
+
+<script src="bgm.js"></script></main>
+</main>
+
+<script src="paw.js"></script>
+</body>
+</html>

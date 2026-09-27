@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ねことの暮らし｜日本猫</title>
+
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="type-detail.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+</head>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/detail.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<body class="types">
+
+<main class="type-detail-main">
+
+<h2>日本猫</h2>
+
+<div class="type-top">
+<img src="images/20日本猫.jpg" alt="日本猫" class="type-image">
+
+<section class="basic-info">
+<dl>
+<dt>品種</dt><dd>日本猫</dd>
+
+<dt>性格</dt>
+<dd>
+賢い<br>
+警戒心がある<br>
+慣れると甘えん坊
+</dd>
+
+<dt>鳴く頻度</dt>
+<dd>
+普通<br>
+感情表現が豊か
+</dd>
+
+<dt>平均体重</dt><dd>3〜5kg</dd>
+<dt>平均寿命</dt><dd>15〜18年</dd>
+<dt>名前の由来</dt><dd>日本で自然に定着した猫</dd>
+</dl>
+</section>
+</div>
+
+<section class="feature">
+<h3>日本猫の特徴</h3>
+
+<p>
+日本猫は、
+<span class="highlight">環境適応能力が高い猫</span>です。
+</p>
+
+<p>
+警戒心はありますが、
+信頼すると深い愛情を示します。
+</p>
+
+<p>
+賢く、人の行動をよく観察するため、
+生活に自然になじみます。
+</p>
+
+<p>
+昔から人と共に暮らしてきた、
+親しみやすい猫です。
+</p>
+</section>
+
+<button class="back-button" onclick="history.back()">← 種類一覧に戻る</button>
+
+<script src="bgm.js"></script></main>
+</main>
+</body>
+</html>

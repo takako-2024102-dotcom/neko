@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜ロシアンブルー</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="type-detail.css">
+  <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+</head>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/detail.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<body class="types">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html">TOP</a></li>
+    <li><a href="basic.html">基礎知識</a></li>
+    <li><a href="types.html">種類</a></li>
+    <li><a href="feeling.html">気持ち</a></li>
+    <li><a href="quiz.html">クイズ</a></li>
+  </ul>
+</nav>
+
+<main class="type-detail-main">
+
+<h2>ロシアンブルー</h2>
+
+<div class="type-top">
+<img src="images/13ロシアンブルー.jpg" alt="ロシアンブルー" class="type-image">
+
+<section class="basic-info">
+<dl>
+  <dt>品種</dt><dd>ロシアンブルー</dd>
+  <dt>性格</dt>
+  <dd>
+    静かで落ち着いている<br>
+    飼い主に忠実<br>
+    繊細で慎重
+  </dd>
+  <dt>鳴く頻度</dt>
+  <dd>
+    とても少ない<br>
+    小さな声で控えめ
+  </dd>
+  <dt>平均体重</dt><dd>3〜5kg</dd>
+  <dt>平均寿命</dt><dd>15〜20年</dd>
+  <dt>名前の由来</dt><dd>ロシア原産と青灰色の毛色から</dd>
+</dl>
+</section>
+</div>
+
+<section class="feature">
+<h3>ロシアンブルーの特徴</h3>
+
+<p>
+ロシアンブルーは、
+<span class="highlight">上品で静かな雰囲気</span>を持つ猫種です。
+</p>
+
+<p>
+無駄に鳴くことはほとんどなく、
+<span class="highlight">落ち着いた環境を好みます</span>。
+</p>
+
+<p>
+飼い主には深い愛情を示しますが、
+初対面の人には距離を取る慎重さがあります。
+</p>
+
+<p>
+環境の変化に敏感なため、
+<span class="highlight">静かで安定した生活</span>が向いています。
+</p>
+
+<p>
+信頼関係が築けると、
+控えめながらも強い絆を感じられる猫です。
+</p>
+</section>
+
+<button class="back-button" onclick="history.back()">← 種類一覧に戻る</button>
+
+<script src="bgm.js"></script></main>
+</main>
+</body>
+</html>
