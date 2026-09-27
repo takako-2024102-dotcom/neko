@@ -1,0 +1,221 @@
+/* =================================================
+   猫の基礎知識ページ（basic.html 専用）
+================================================= */
+
+/* ===== スライダー ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #fffaf0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideShow 25s infinite;
+}
+
+.slide1 { animation-delay: 0s; }
+.slide2 { animation-delay: 5s; }
+.slide3 { animation-delay: 10s; }
+.slide4 { animation-delay: 15s; }
+.slide5 { animation-delay: 20s; }
+
+@keyframes slideShow {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 基礎知識ページの画像 */
+.basic .slide1 { background-image: url("images/basic1.jpg"); }
+.basic .slide2 { background-image: url("images/basic2.jpg"); }
+.basic .slide3 { background-image: url("images/basic3.jpg"); }
+.basic .slide4 { background-image: url("images/basic4.jpg"); }
+.basic .slide5 { background-image: url("images/basic5.jpg"); }
+
+/* ===== スライダー中央テキスト ===== */
+.slider-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* ===== メイン ===== */
+.basic-main {
+  padding: 40px 20px;
+}
+
+/* ===== セクション ===== */
+.section {
+  padding: 60px 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.section-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #ff9900;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* ===== フェードイン ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== カード共通 ===== */
+.info-card {
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 30px;
+  max-width: 900px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card.open {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* 色 */
+.pink   { background: #f9c5d1; }
+.blue   { background: #cde7f6; }
+.green  { background: #d8f0e0; }
+.yellow { background: #fff0c9; }
+.orange {
+  background-color: #ffd699;
+  border-left: 6px solid #ff9900;
+}
+
+/* ===== カードヘッダー ===== */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.icon {
+  font-size: 2rem;
+  animation: float-icon 2s ease-in-out infinite;
+}
+
+@keyframes float-icon {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ===== カード本文 ===== */
+.card-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  text-align: center;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  margin-top: 20px;
+}
+
+.info-card.open .card-body {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.card-body p {
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+/* ===== カード内画像 ===== */
+.card-image {
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 16px;
+}
+
+/* ===== details（開閉） ===== */
+.detail-item {
+  max-width: 700px;
+  margin: 15px auto;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
+}
+
+.detail-item summary {
+  cursor: pointer;
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  padding-right: 25px;
+}
+
+.detail-item summary::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+
+.detail-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.detail-item p {
+  margin-top: 12px;
+  line-height: 1.8;
+  color: #444;
+}

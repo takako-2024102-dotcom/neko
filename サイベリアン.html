@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜サイベリアン</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="type-detail.css">
+  <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+</head>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/detail.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+<body class="types">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<main class="type-detail-main">
+
+  <h2>サイベリアン</h2>
+
+  <div class="type-top">
+
+    <img src="images/6サイベリアン.jpg"
+         alt="サイベリアン"
+         class="type-image">
+
+    <section class="basic-info">
+      <dl>
+        <dt>品種</dt>
+        <dd>サイベリアン</dd>
+
+        <dt>性格</dt>
+        <dd>
+          穏やかで賢い<br>
+          人との距離感が上手<br>
+          忠誠心が強い
+        </dd>
+
+        <dt>鳴く頻度</dt>
+        <dd>
+          少なめ<br>
+          静かな声<br>
+          必要なときに鳴く
+        </dd>
+
+        <dt>平均体重</dt>
+        <dd>4〜7kg</dd>
+
+        <dt>平均寿命</dt>
+        <dd>12〜15年</dd>
+
+        <dt>名前の由来</dt>
+        <dd>ロシア・シベリア地方原産であることから</dd>
+      </dl>
+    </section>
+
+  </div>
+
+  <section class="feature">
+    <h3>サイベリアンの特徴</h3>
+
+    <p>
+      サイベリアンは、
+      <span class="highlight">寒冷地に適応した長毛種</span>です。
+      厚い被毛が体を守っています。
+    </p>
+
+    <p>
+      性格は穏やかで賢く、
+      <span class="highlight">人との信頼関係を大切にする猫</span>です。
+    </p>
+
+    <p>
+      落ち着きがありながらも遊び心があり、
+      家庭に自然になじみます。
+    </p>
+
+    <p>
+      運動能力が高く、
+      <span class="highlight">活発に動くことも得意</span>です。
+    </p>
+
+    <p>
+      穏やかさと力強さを併せ持つ、
+      魅力的な猫種です。
+    </p>
+  </section>
+
+<button class="back-button" onclick="history.back()">← 種類一覧に戻る</button>
+
+<script src="bgm.js"></script></main>
+</main>
+
+<script src="paw.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ねことの暮らし｜エキゾチックショートヘア</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="type-detail.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+</head>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/detail.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+<body class="types">
+<main class="type-detail-main">
+
+<h2>エキゾチックショートヘア</h2>
+
+<div class="type-top">
+<img src="images/14エキゾチックショートヘア.jpg" class="type-image">
+
+<section class="basic-info">
+<dl>
+<dt>品種</dt><dd>エキゾチックショートヘア</dd>
+<dt>性格</dt><dd>穏やか・甘えん坊・のんびり</dd>
+<dt>鳴く頻度</dt><dd>少なめ</dd>
+<dt>平均体重</dt><dd>3〜6kg</dd>
+<dt>平均寿命</dt><dd>12〜15年</dd>
+<dt>名前の由来</dt><dd>異国的な顔立ちから</dd>
+</dl>
+</section>
+</div>
+
+<section class="feature">
+<h3>エキゾチックショートヘアの特徴</h3>
+
+<p>
+<span class="highlight">ぺちゃっとした顔立ち</span>が最大の特徴です。
+</p>
+
+<p>
+ペルシャに似た穏やかな性格で、
+人と一緒に過ごす時間を好みます。
+</p>
+
+<p>
+活発すぎず、
+<span class="highlight">室内飼いに向いた猫種</span>です。
+</p>
+
+<p>
+短毛のためお手入れが比較的簡単なのも魅力です。
+</p>
+</section>
+
+<button class="back-button" onclick="history.back()">← 種類一覧に戻る</button>
+
+<script src="bgm.js"></script></main>
+</main>
+</body>
+</html>

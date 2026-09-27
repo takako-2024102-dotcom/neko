@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜猫クイズ</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+ <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="bgm.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/quiz.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<body class="quiz">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<section class="slider">
+  <div class="slide slide1"></div>
+  <div class="slide slide2"></div>
+  <div class="slide slide3"></div>
+  <div class="slide slide4"></div>
+  <div class="slide slide5"></div>
+
+  <div class="slider-text">
+    <h2>猫クイズ</h2>
+    <p>あなたは猫マスターになれる？</p>
+  </div>
+</section>
+<main class="quiz-main">
+
+  <div id="quiz-box">
+    <h2 id="question-number"></h2>
+    <p id="question-text"></p>
+    <div id="choices"></div>
+    <button id="next-btn" disabled>次の問題へ</button>
+  </div>
+
+
+
+<!-- 猫の表情についての表 -->
+<section id="cat-expression-table">
+  <h2 class="table-title">🐾 猫の表情と気持ち</h2>
+
+  <table class="info-table">
+    <tr>
+      <th>表情</th>
+      <th>正解数</th>
+      <th>状態</th>
+      <th>説明</th>
+    </tr>
+
+    <tr>
+      <td><img src="images/quiz_cat_happy.gif"></td>
+      <td>7問</td>
+      <td>笑顔・とってもごきげん</td>
+      <td>完全制覇！猫マスター級だね！</td>
+    </tr>
+
+    <tr>
+      <td><img src="images/quiz_cat_normal.gif"></td>
+      <td>4〜6問</td>
+      <td>ふつう</td>
+      <td>かなり猫に詳しいよ！</td>
+    </tr>
+
+    <tr>
+      <td><img src="images/quiz_cat_sad.gif"></td>
+      <td>3問以下</td>
+      <td>しょんぼり</td>
+      <td>これからもっと猫を知ろう！</td>
+    </tr>
+  </table>
+</section>
+
+<!-- 称号についての表 -->
+<section id="cat-rank-table">
+  <h2 class="table-title">🏆 称号について</h2>
+
+  <table class="info-table">
+    <tr>
+      <th>称号</th>
+      <th>正解数</th>
+      <th>名前</th>
+      <th>説明</th>
+    </tr>
+
+    <tr>
+      <td><div class="rank-box">猫マスター</div></td>
+      <td>7問</td>
+      <td>猫マスター</td>
+      <td>猫を完全に理解している最上級者！</td>
+    </tr>
+
+    <tr>
+      <td><div class="rank-box">猫博士</div></td>
+      <td>6問</td>
+      <td>猫博士</td>
+      <td>とても詳しい猫の専門家！</td>
+    </tr>
+
+    <tr>
+      <td><div class="rank-box">猫上級者</div></td>
+      <td>5問</td>
+      <td>猫上級者</td>
+      <td>かなり猫にくわしい！</td>
+    </tr>
+
+    <tr>
+      <td><div class="rank-box">猫初心者</div></td>
+      <td>3〜4問</td>
+      <td>猫初心者</td>
+      <td>基本はバッチリ！これから伸びる！</td>
+    </tr>
+
+    <tr>
+      <td><div class="rank-box">猫見習い</div></td>
+      <td>0〜2問</td>
+      <td>猫見習い</td>
+      <td>これから猫マスターを目指そう！</td>
+    </tr>
+  </table>
+
+
+
+
+
+
+
+ <!-- 正誤判定 -->
+  <div id="judge-overlay">
+    <div id="judge-content">
+      <div id="judge-mark"></div>
+      <div id="judge-text"></div>
+      <button id="explain-btn">解説を見る</button>
+    </div>
+  </div>
+
+  <!-- 解説 -->
+  <div id="explanation-overlay">
+    <div id="explanation-modal">
+      <h3>解説</h3>
+      <p id="explanation-text"></p>
+      <button id="close-explain-btn">閉じる</button>
+    </div>
+  </div>
+
+  <!-- 結果 -->
+  <div id="result-overlay">
+    <div id="result-box">
+      <h2>結果発表</h2>
+      <p id="result-text"></p>
+
+      <div class="result-flex">
+        <img id="result-image" src="" alt="猫">
+        <div class="result-rank">
+          <div id="result-title" class="rank-box"></div>
+        </div>
+      </div>
+
+<p class="result-guide">
+  猫の表情などについては下の表で見れるよ！
+</p>
+
+
+      <button id="retry-btn" onclick="history.back()">閉じる</button>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- 正誤判定 効果音 -->
+<audio id="se-correct" src="sounds/correct.mp3" preload="auto"></audio>
+<audio id="se-wrong" src="sounds/wrong.mp3" preload="auto"></audio>
+
+<script src="quiz.js"></script>
+</body>
+</html>
+
+
+
+<script src="paw.js"></script>
+<script src="quiz.js"></script>
+<script src="bgm.js"></script>
+</body>
+</html>

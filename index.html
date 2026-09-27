@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜TOP</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="bgm.css">
+
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/top.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+<body class="top">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<section class="slider">
+  <div class="slide slide1"></div>
+  <div class="slide slide2"></div>
+  <div class="slide slide3"></div>
+  <div class="slide slide4"></div>
+  <div class="slide slide5"></div>
+
+  <div class="slider-text">
+    <h2>ようこそ、ねことの暮らしへ</h2>
+    <p>猫をもっと知って、もっと好きになる</p>
+  </div>
+</section>
+
+<main class="top-main">
+
+<section class="welcome-area">
+
+  <h2 class="welcome-title bounce-text">
+    <div class="title-line">
+      <span style="--i:1">ね</span>
+      <span style="--i:2">こ</span>
+      <span style="--i:3">と</span>
+      <span style="--i:4">の</span>
+      <span style="--i:5">く</span>
+      <span style="--i:6">ら</span>
+      <span style="--i:7">し</span>
+      <span style="--i:8">へ</span>
+    </div>
+    <div class="title-line highlight">
+      <span style="--i:9">よ</span>
+      <span style="--i:10">う</span>
+      <span style="--i:11">こ</span>
+      <span style="--i:12">そ</span>
+      <span style="--i:13">！</span>
+    </div>
+  </h2>
+
+  <div class="welcome-text">
+    <p>
+      このサイトでは、猫の歴史や基礎知識を中心に、<br>
+      猫との暮らしについて楽しく学ぶことができます。
+    </p>
+
+    <p>
+      さまざまな猫の種類や性格を知りながら、<br>
+      クイズを通して理解を深めていきましょう。
+    </p>
+  </div>
+
+</section>
+
+
+<section class="cat-history">
+
+  <!-- タイトル -->
+  <div class="history-header fade-up">
+      <h2 class="history-title">猫の歴史</h2>
+    <p class="history-sub">人とともに生きてきた、約1万年の歩み</p>
+  </div>
+
+  <!-- 導入 -->
+  <div class="history-intro fade-up">
+    <img src="images/history_intro.jpg" alt="人と猫">
+    <div>
+      <p>
+        猫は、人間が農耕を始めたころから、自然と人の生活圏に入り込みました。
+        ねずみを捕る存在として役立つ一方で、そのしなやかな動きや神秘的な姿は、
+        人々の心を強く惹きつけてきました。
+      </p>
+      <p>
+        猫の歴史は、「役に立つ動物」から「信仰の対象」、
+        そして「家族の一員」へと変化してきた歴史でもあります。
+      </p>
+    </div>
+  </div>
+
+  <!-- 年表 -->
+  <ul class="history-timeline">
+
+    <li class="timeline-item fade-up">
+      <span class="year">約1万年前</span>
+      <div class="timeline-content">
+        <img src="images/history0.jpg" alt="猫の祖先">
+        <div>
+          <h3>猫の祖先と人との出会い</h3>
+          <p>
+            現代の猫の祖先はリビアヤマネコとされています。
+            穀物を保存するようになった人間の集落にはねずみが増え、
+            それを狙って猫が集まるようになりました。
+          </p>
+          <p>
+            この時点では飼われていたわけではなく、
+            「お互いに利益がある関係」として共存が始まりました。
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item fade-up">
+      <span class="year">古代エジプト</span>
+      <div class="timeline-content">
+        <img src="images/history2.jpg" alt="エジプトの猫">
+        <div>
+          <h3>神として崇拝された猫</h3>
+          <p>
+            古代エジプトでは、猫は女神バステトの化身とされ、
+            家庭や命を守る神聖な存在でした。
+          </p>
+          <p>
+            猫を傷つけることは重罪とされ、
+            猫の死を悼んでミイラにする文化もありました。
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item fade-up">
+      <span class="year">中世ヨーロッパ</span>
+      <div class="timeline-content">
+        <img src="images/history3.jpg" alt="中世の猫">
+        <div>
+          <h3>誤解と迫害の時代</h3>
+          <p>
+            中世ヨーロッパでは、猫は不吉な存在や魔女の使いとして
+            誤解されることがありました。
+          </p>
+          <p>
+            その結果、猫が減少し、ねずみが増え、
+            感染症の拡大につながったとも言われています。
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li class="timeline-item fade-up">
+      <span class="year">現代</span>
+      <div class="timeline-content">
+        <img src="images/history5.jpg" alt="現代の猫">
+        <div>
+          <h3>家族としての猫</h3>
+          <p>
+            現代では、猫はペットとしてだけでなく、
+            心を癒す大切な家族の一員として迎えられています。
+          </p>
+          <p>
+            猫と人は、より深い信頼関係を築く存在へと変化しました。
+          </p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+ <!-- ===== 歴史まとめ ===== -->
+<div class="history-summary fade-up">
+  <h3 class="summary-title">🐾 猫の歴史まとめ</h3>
+
+  <div class="summary-box">
+  <p>
+    猫は、農耕が始まったころから
+    人の暮らしのそばで生きてきました。
+    ねずみを捕る動物として、
+    自然と人に大切にされるようになりました。
+  </p>
+
+  <p>
+    古代エジプトでは神としてあがめられ、
+    中世ヨーロッパでは誤解されるなど、
+    時代によって猫の立場は変わってきました。
+  </p>
+
+  <p>
+    現代では、猫は家族の一員として
+    人の心を癒やす存在です。<br>
+    このように、猫は人と深い関係を築いてきました。
+  </p>
+
+  <!-- 右下に表示する画像 -->
+  <img src="images/history_summary.jpg" alt="猫と人の暮らし" class="summary-image">
+</div>
+
+</div>
+</section>
+
+
+<!-- 章切り替え -->
+<section class="next-section-title">
+  <h2>各項目説明</h2>
+  <p>ここでは、このホームページにある項目について説明しますｓ</p>
+</section>
+
+</section>
+
+
+
+
+  <section class="info-section">
+
+    <div class="info-card pink">
+      <div class="card-header">
+        <span class="icon left">📘</span>
+        <h3>猫の基礎知識</h3>
+        <span class="icon right">📘</span>
+      </div>
+      <div class="card-body">
+        猫の性格や行動、生活のしかたなど、<br>
+        基本的な知識を分かりやすく紹介します。
+        <a href="basic.html" class="card-link">猫の基礎知識→</a>
+      </div>
+    </div>
+
+    <div class="info-card blue">
+      <div class="card-header">
+        <span class="icon left">🐱</span>
+        <h3>種類大図鑑</h3>
+        <span class="icon right">🐱</span>
+      </div>
+      <div class="card-body">
+        世界中のさまざまな猫の種類を、<br>
+        写真と一緒に紹介します。
+        <a href="types.html" class="card-link">種類大図鑑 →</a>
+      </div>
+    </div>
+
+    <div class="info-card green">
+      <div class="card-header">
+        <span class="icon left">💗</span>
+        <h3>猫の気持ち</h3>
+        <span class="icon right">💗</span>
+      </div>
+      <div class="card-body">
+        猫のしぐさや鳴き声から、<br>
+        気持ちを読み取るヒントを紹介します。
+        <a href="feeling.html" class="card-link">猫の気持ち →</a>
+      </div>
+    </div>
+
+    <div class="info-card yellow">
+      <div class="card-header">
+        <span class="icon left">❓</span>
+        <h3>猫クイズ</h3>
+        <span class="icon right">❓</span>
+      </div>
+      <div class="card-body">
+        クイズ形式で、<br>
+        楽しく猫について学べます。
+        <a href="quiz.html" class="card-link">猫クイズ →</a>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© ねことの暮らし</p>
+</footer>
+
+<script src="paw.js"></script>
+<script src="main.js"></script>
+<script src="index.js"></script>
+<script src="bgm.js"></script>
+
+</body>
+</html>

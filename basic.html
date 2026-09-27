@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜猫の基礎知識</title>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="basic.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+
+
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/basic.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+  <style>
+    /* セクション全体 */
+    .section {
+      padding: 60px 20px; /* 上下の余白を広げて区切りを強調 */
+      border-bottom: 2px solid #eee; /* 区切り線 */
+    }
+
+    /* セクションタイトル */
+    .section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    /* タイトル下の装飾ライン */
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #ff9900;
+      margin: 10px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    /* 長文テキストの中央揃え */
+    .section p {
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      line-height: 1.8;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    /* info-cardの中の長文も中央揃え */
+    .info-card .card-body p {
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* 新しいセクション用のカードカラー */
+    .info-card.orange {
+      background-color: #ffd699;
+      border-left: 6px solid #ff9900;
+    }
+  </style>
+</head>
+
+<body class="basic">
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<section class="slider">
+  <div class="slide slide1"></div>
+  <div class="slide slide2"></div>
+  <div class="slide slide3"></div>
+  <div class="slide slide4"></div>
+  <div class="slide slide5"></div>
+
+  <div class="slider-text">
+    <h2>猫の基礎知識</h2>
+    <p>まずは猫を知ることから始めよう</p>
+  </div>
+</section>
+
+<main class="basic-main">
+
+<!-- 猫ってどんな生き物 -->
+<section class="section section-white fade-in">
+  <div class="section-inner">
+    <h2>猫ってどんな生き物？</h2>
+    <p>
+      猫は人と共に暮らしてきた動物ですが、自分の意思やペースをとても大切にする生き物です。
+      また、猫は好奇心旺盛で観察力が高く、環境の変化や人の行動にも敏感に反応します。
+      それぞれの性格や気質が異なり、同じ猫でも性格によって行動パターンや好む遊びが違います。
+      飼い主との信頼関係が築かれるまでには時間がかかりますが、そのぶん深い愛情表現を見せてくれるのも特徴です。
+      自分の安全や快適さを優先するため、ストレスを感じる環境では距離を置くこともあります。
+      猫を理解するには、観察し、気持ちを尊重することが大切です。
+    </p>
+
+  </div>
+</section>
+
+<!-- 猫の基礎的な特徴 -->
+<section class="section section-light fade-in">
+  <div class="section-inner">
+    <h2>猫の基礎的な特徴</h2>
+
+    <!-- 性格 -->
+    <div class="info-card pink">
+      <div class="card-header">
+        <i class="icon fa-solid fa-face-smile"></i>
+        <h3>性格</h3>
+      </div>
+
+      <div class="card-body">
+        <img src="images/basic_personality.jpg" class="card-image">
+
+        <details class="detail-item">
+          <summary>警戒心が強い</summary>
+          <p>
+            猫は身を守る本能が強く、初めての人や場所ではすぐに近づきません。
+            安全だと判断するまで、じっくり様子を観察する習性があります。
+            このため急に触ったり大声を出すと驚くことがあるので、静かに接することが重要です。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>信頼すると甘える</summary>
+          <p>
+            時間をかけて安心できる相手だと認識すると、体をすり寄せたり、喉を鳴らしたりして愛情を表現します。
+            些細な日常のケアや遊びを通じて、猫との絆はより深まります。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>自分のペースを守る</summary>
+          <p>
+            猫は気分を大切にするため、構われすぎると距離を取ることがあります。
+            無理をせず、猫のタイミングに合わせることで、安心感と信頼感を維持できます。
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 生活リズム -->
+    <div class="info-card blue">
+      <div class="card-header">
+        <i class="icon fa-solid fa-bed"></i>
+        <h3>生活リズム</h3>
+      </div>
+
+      <div class="card-body">
+        <img src="images/basic_life.jpg" class="card-image">
+
+        <details class="detail-item">
+          <summary>長時間の睡眠</summary>
+          <p>
+            猫は1日の多くを眠って過ごし、体力を温存しています。猫の睡眠時間は1        日12〜16時間程度です。特に子猫は成長ホルモンの分泌が盛んなため、18時間以上眠ることが一般的です。
+            これは野生時代の狩りに備える習性の名残で、睡眠の質が健康状態に直結します。
+            安心して眠れる環境を整えることが大切です。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>活動的な時間帯</summary>
+          <p>
+            明け方や夕方は特に活発になり、遊びたがることが多いです。
+            この時間帯に運動や遊びを取り入れることで、健康維持とストレス解消につながります。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>静かな環境を好む</summary>
+          <p>
+            大きな音や急な動きは猫にとってストレスになります。
+            落ち着いた環境を作ることは猫の心身の安定に重要で、隠れ場所や寝床の確保も有効です。
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 人との関係 -->
+    <div class="info-card green">
+      <div class="card-header">
+        <i class="icon fa-solid fa-users"></i>
+        <h3>人との関係</h3>
+      </div>
+
+      <div class="card-body">
+        <img src="images/basic_people.jpg" class="card-image">
+
+        <details class="detail-item">
+          <summary>距離感を大切にする</summary>
+          <p>
+            猫は自分から近づくことで安心感を得ます。
+            無理に触らず、そっと見守る姿勢が信頼を深めます。
+            日々の観察で猫のサインを理解することが大切です。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>嫌なときは無理をしない</summary>
+          <p>
+            耳やしっぽの動きは猫の気持ちを表しています。
+            嫌がっているサインが出たら、すぐに距離を取りましょう。
+            尊重されることで猫は安心し、より愛情を示すようになります。
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <!-- 遊び -->
+    <div class="info-card yellow">
+      <div class="card-header">
+        <i class="icon fa-solid fa-paw"></i>
+        <h3>遊びと運動</h3>
+      </div>
+
+      <div class="card-body">
+        <img src="images/basic_play.jpg" class="card-image">
+
+        <details class="detail-item">
+          <summary>狩りの本能を満たす</summary>
+          <p>
+            猫じゃらしなどで追いかける動きを再現すると、本能が刺激され満足感を得やすくなります。
+            遊びを通じて運動不足を解消し、ストレス軽減にもつながります。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>短時間でも毎日行う</summary>
+          <p>
+            長時間でなくても、毎日遊ぶことが大切です。
+            遊びのリズムを作ることで、猫の精神的な安定と健康維持に役立ちます。
+          </p>
+        </details>
+
+        <details class="detail-item">
+          <summary>遊びの終わりを意識する</summary>
+          <p>
+            最後に獲物を捕まえさせることで達成感が生まれます。
+            満足して落ち着きやすくなり、夜間の活動過多を防ぐこともできます。
+          </p>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 健康と生活習慣 -->
+<section class="section section-white fade-in">
+  <div class="section-inner">
+    <h2>猫の健康と生活習慣</h2>
+   
+    <p>
+      猫の健康を保つには、日々の生活習慣の管理が欠かせません。
+      食事の質や量、適度な運動、定期的な健康チェックが重要です。
+      また、ストレスや環境の変化にも敏感なので、静かで安心できる空間を提供することも大切です。
+      猫のサインを見逃さず、体調や行動の変化を早めに察知することで、病気の予防にもつながります。
+    </p>
+
+   <!-- 健康管理 -->
+<div class="info-card orange">
+  <div class="card-header">
+    <i class="icon fa-solid fa-heart-pulse"></i>
+    <h3>健康管理</h3>
+  </div>
+
+  <div class="card-body">
+    <!-- ★ 追加する画像 -->
+    <img src="images/basic_health.jpg" class="card-image">
+
+    <details class="detail-item">
+      <summary>食事のポイント</summary>
+      <p>
+        栄養バランスの良い食事を与えることは、猫の健康維持に直結します。
+        年齢や体調に合わせた食事量を管理し、急な変更は避けるようにしましょう。
+      </p>
+    </details>
+
+    <details class="detail-item">
+      <summary>定期的な健康チェック</summary>
+      <p>
+        ワクチン接種や定期的な健康診断は、病気の早期発見につながります。
+        体重や毛並み、排泄の状態を日常的に観察することも大切です。
+      </p>
+    </details>
+
+    <details class="detail-item">
+      <summary>運動とストレス管理</summary>
+      <p>
+        適度な遊びや運動でストレスを発散させ、筋力維持や肥満予防に役立ちます。
+        静かで安心できる休息場所を用意することも心身の健康につながります。
+      </p>
+    </details>
+  </div>
+</div>
+
+<!-- 生活環境の整え方 -->
+<div class="info-card orange">
+  <div class="card-header">
+    <i class="icon fa-solid fa-house-user"></i> <!-- ここでアイコン変更も可能 -->
+    <h3>生活環境の整え方</h3>
+  </div>
+
+  <div class="card-body">
+    <img src="images/basic_environment.jpg" class="card-image">
+
+    <details class="detail-item">
+      <summary>安心できる居場所を作る</summary>
+      <p>
+        猫は自分だけの落ち着ける場所があることで、強い不安や緊張を感じにくくなります。
+        静かで人目の少ない場所に、寝床や隠れられるスペースを用意してあげましょう。
+      </p>
+    </details>
+
+    <details class="detail-item">
+      <summary>上下運動できる環境</summary>
+      <p>
+        キャットタワーや棚などの高低差は、猫の運動不足解消に効果的です。
+        高い場所から周囲を見渡せることで、安心感や満足感も得られます。
+      </p>
+    </details>
+
+    <details class="detail-item">
+      <summary>清潔な環境を保つ</summary>
+      <p>
+        トイレや食器が汚れていると、猫は強いストレスを感じてしまいます。
+        毎日の掃除を習慣にし、清潔で快適な環境を維持することが健康につながります。
+      </p>
+    </details>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+</main>
+
+<footer class="footer">
+  <p>© ねことの暮らし</p>
+</footer>
+
+
+<script src="basic.js"></script>
+<script src="paw.js"></script>
+<script src="bgm.js"></script>
+
+
+</body>
+</html>

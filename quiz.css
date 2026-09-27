@@ -1,0 +1,564 @@
+/* =================================================
+   クイズページ（quiz.html 専用）
+   ※ ヘッダー・スライダーには影響しない
+================================================= */
+
+/* =========================
+   スライダー
+========================= */
+.quiz .slider {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background: #fffaf0;
+}
+
+.quiz .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: quizSlideShow 25s infinite;
+}
+
+/* スライダー画像 */
+.quiz .slide1 { background-image: url("images/quiz1.jpg"); animation-delay: 0s; }
+.quiz .slide2 { background-image: url("images/quiz2.jpg"); animation-delay: 5s; }
+.quiz .slide3 { background-image: url("images/quiz3.jpg"); animation-delay: 10s; }
+.quiz .slide4 { background-image: url("images/quiz4.jpg"); animation-delay: 15s; }
+.quiz .slide5 { background-image: url("images/quiz5.jpg"); animation-delay: 20s; }
+
+/* スライド切替アニメーション */
+@keyframes quizSlideShow {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* スライダー中央テキスト */
+.slider-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 12px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* =========================
+   クイズ本体
+========================= */
+.quiz-main {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#quiz-box {
+  background: #ffffff;
+  padding: 40px 20px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+#question-number { font-size: 22px; margin-bottom: 10px; }
+#question-text { font-size: 18px; margin-bottom: 30px; }
+
+#choices {
+  display: grid;
+  gap: 15px;
+}
+
+/* 選択肢ボタン */
+.choice-btn {
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: #f7c6cc;
+}
+
+/* 正解・不正解時 */
+.choice-btn.correct { background: #b8e6c8; animation: pop 0.4s; }
+.choice-btn.wrong { background: #f5a3a3; animation: shake 0.4s; }
+
+/* 選択肢アニメーション */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* =========================
+   正誤判定オーバーレイ
+========================= */
+#judge-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+#judge-overlay.show { display: flex; }
+
+#judge-content {
+  text-align: center;
+  animation: judgeBoom 0.6s ease;
+}
+
+/* 正誤の色（※後勝ちでこちらが有効） */
+#judge-content.correct { color: red; }
+#judge-content.wrong { color: blue; }
+
+#judge-mark {
+  font-size: 150px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#judge-text {
+  margin-top: 10px;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+/* ドーン演出 */
+@keyframes judgeBoom {
+  0% { transform: scale(0.3); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   解説モーダル
+========================= */
+#explanation-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3500;
+}
+
+#explanation-overlay.show { display: flex; }
+
+#explanation-modal {
+  background: #ffffff;
+  max-width: 600px;
+  padding: 30px 35px;
+  border-radius: 24px;
+  line-height: 1.9;
+  animation: popUpExplain 0.4s ease;
+}
+
+@keyframes popUpExplain {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* =========================
+   結果発表モーダル
+========================= */
+#result-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+#result-overlay.show { display: flex; }
+
+#result-box {
+  max-width: 800px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  animation: resultBoom 0.5s ease;
+}
+
+@keyframes resultBoom {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 結果表示レイアウト */
+.result-flex {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 猫画像 */
+#result-image {
+  max-width: 240px;
+  margin-top: 20px;
+  animation: floatCat 2.5s ease-in-out infinite;
+}
+
+@keyframes floatCat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* 称号 */
+.rank-box {
+  padding: 15px 25px;
+  border: 3px solid #f7c6cc;
+  border-radius: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* =========================
+   共通
+========================= */
+.hidden { display: none; }
+
+/* ==========================
+   ボタン強化（次の問題・再挑戦）
+========================== */
+
+/* 次の問題へ */
+#next-btn {
+  min-width: 220px;
+  background: #f7c6cc;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 6px 0 #eaaab3;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#next-btn.active:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #eaaab3;
+}
+
+/* もう一度挑戦する */
+#retry-btn {
+  margin-top: 25px;
+  padding: 14px 34px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ffb74d, #ff9800);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#retry-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+
+/* ==========================
+   結果発表をさらに強調
+========================== */
+
+#result-box {
+  background: linear-gradient(135deg, #fffaf0, #ffffff);
+  border: 6px solid #f7c6cc;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* 結果タイトル */
+#result-box h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #e91e63;
+  text-shadow: 2px 2px 0 #ffd6e0;
+}
+
+/* 点数表示 */
+#result-score {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ランク表示をドン！ */
+.rank-box {
+  font-size: 30px;
+  padding: 20px 40px;
+  background: #fff;
+  border: 4px solid #f7c6cc;
+  box-shadow: 0 8px 0 #f2aeb7;
+  animation: rankPop 0.6s ease;
+}
+
+@keyframes rankPop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+/* ==========================
+   選択肢と次の問題への間隔調整
+   （誤タップ防止＆視認性UP）
+========================== */
+
+/* 選択肢全体の下に余白を追加 */
+#choices {
+  margin-bottom: 40px;
+}
+
+/* 次の問題へボタンを少し下げる */
+#next-btn {
+  margin-top: 10px; /* 既存30pxに＋されて自然に離れる */
+}
+
+
+/* ==========================
+   選択肢ボタン 強化
+========================== */
+
+.choice-btn {
+  background: #e3f2fd;          /* 水色系で選択肢だと分かる */
+  color: #333;
+  border-radius: 999px;         /* 楕円形 */
+  font-weight: bold;
+  box-shadow: 0 4px 0 #bbdefb;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.choice-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #bbdefb;
+}
+
+/* 正解・不正解時も丸さは維持 */
+.choice-btn.correct,
+.choice-btn.wrong {
+  border-radius: 999px;
+}
+
+
+/* ==========================
+   次の問題へ ボタン 強化
+========================== */
+
+#next-btn {
+  background: linear-gradient(135deg, #f48fb1, #f06292);
+  color: white;
+  border-radius: 999px;         /* 楕円形 */
+  font-weight: bold;
+  box-shadow: 0 6px 0 #ec407a;
+}
+
+#next-btn.active:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #ec407a;
+}
+
+
+/* ==========================
+   解説へ ボタン 強化
+========================== */
+
+#explain-btn {
+  background: linear-gradient(135deg, #81c784, #4caf50);
+  color: white;
+  border-radius: 999px;
+  box-shadow: 0 5px 0 #388e3c;
+}
+
+#explain-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #388e3c;
+}
+
+
+/* ==========================
+   解説を閉じる ボタン 強化
+========================== */
+
+#close-explain-btn {
+  background: #90caf9;
+  color: #0d47a1;
+  font-weight: bold;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 #64b5f6;
+}
+
+#close-explain-btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #64b5f6;
+}
+
+
+/* =========================
+   表 共通デザイン
+========================= */
+
+.table-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #e91e63;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 80px;
+}
+
+.info-table th {
+  background: #f7c6cc;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.info-table td {
+  padding: 16px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* 表情イラスト */
+.info-table img {
+  width: 80px;
+  animation: floatCat 2.5s ease-in-out infinite;
+}
+
+/* 表のセクション */
+#cat-expression-table,
+#cat-rank-table {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* =========================
+   称号ボックスを大きくする
+========================= */
+
+#cat-rank-table .rank-box {
+  min-width: 160px;      /* 横幅を広げる */
+  height: 52px;          /* 高さを固定 */
+  line-height: 52px;     /* 縦中央揃え */
+  font-size: 17px;       /* 文字を少し大きく */
+  font-weight: bold;
+  white-space: nowrap;  /* 改行させない */
+  padding: 0 20px;
+  border-radius: 14px;
+}
+
+/* =========================
+   称号 ふわふわアニメーション
+========================= */
+
+/* 結果発表の称号だけ動かす */
+#result-title {
+  animation:
+    rankPop 0.6s ease,
+    floatRank 2.4s ease-in-out infinite 0.6s;
+}
+
+/* ふわっと上下 */
+@keyframes floatRank {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* 選択肢の基本 */
+.choice-btn {
+  background: #90caf9; /* 鮮やか水色 */
+  color: #fff;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #64b5f6;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.3s;
+}
+
+/* 選択肢薄め（押せない状態） */
+.choices-disabled .choice-btn {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 次の問題へ ボタン通常 */
+#next-btn {
+  opacity: 0.6;  /* 最初は薄く */
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* 次の問題へ 強調 */
+#next-btn.highlight {
+  opacity: 1;
+  animation: popNext 0.6s ease infinite alternate;
+}
+
+/* アニメーション：少し前に押し出される感じ */
+@keyframes popNext {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* 結果発表用ボタン */
+#next-btn.result {
+  opacity: 1;
+  background: linear-gradient(135deg, #ffb74d, #ff9800);
+  box-shadow: 0 8px 0 #f57c00;
+  transform: scale(1.2);
+}
+
+
+
+
+
+

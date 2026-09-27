@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ねことの暮らし｜種類大図鑑</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="types.css">
+ <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="bgm.css">
+
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="types">
+
+
+
+<!-- BGMプレイヤー -->
+<div id="bgm-player" data-bgm="BGM/types.mp3">
+
+  <!-- ♪ アイコン（開閉のみ） -->
+  <button id="bgm-open">
+    <i class="fa-solid fa-music"></i>
+  </button>
+
+  <!-- 詳細パネル -->
+  <div id="bgm-panel">
+
+    <!-- 再生 / 停止 -->
+    <button id="bgm-play">
+      <i class="fa-solid fa-pause"></i>
+      <span>再生中</span>
+    </button>
+
+    <!-- 再生時間 -->
+    <div class="control-row">
+      <i class="fa-solid fa-clock"></i>
+      <input type="range" id="seek-bar" value="0">
+    </div>
+
+    <!-- 音量 -->
+    <div class="control-row">
+      <i class="fa-solid fa-volume-high"></i>
+      <input type="range" id="volume-bar" min="0" max="1" step="0.01" value="0.5">
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<header class="header">
+  <h1 class="site-title">ねことの暮らし</h1>
+  <div class="paw-container"></div>
+</header>
+
+<nav class="nav">
+  <ul class="nav-list">
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>TOP</span></a></li>
+    <li><a href="basic.html"><i class="fa-solid fa-book"></i><span>基礎知識</span></a></li>
+    <li><a href="types.html"><i class="fa-solid fa-cat"></i><span>種類</span></a></li>
+    <li><a href="feeling.html"><i class="fa-solid fa-heart"></i><span>気持ち</span></a></li>
+    <li><a href="quiz.html"><i class="fa-solid fa-question"></i><span>クイズ</span></a></li>
+  </ul>
+</nav>
+
+<section class="slider">
+  <div class="slide slide1"></div>
+  <div class="slide slide2"></div>
+  <div class="slide slide3"></div>
+  <div class="slide slide4"></div>
+  <div class="slide slide5"></div>
+
+  <div class="slider-text">
+    <h2>種類大図鑑</h2>
+    <p>猫にもたくさんの個性があります</p>
+  </div>
+</section>
+
+<main class="types-main">
+
+  <h2>人気の猫ランキング TOP20</h2>
+  <p class="intro-text">
+    表をタップすると、対応する写真の位置まで自動で移動します。
+  </p>
+
+  <!-- ランキング表 -->
+  <section class="ranking-table-area">
+    <div class="ranking-row">
+
+      <table class="ranking-table">
+        <caption>1〜10位</caption>
+        <thead>
+          <tr><th>順位</th><th>種類</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="#scottish">スコティッシュフォールド</a></td></tr>
+          <tr><td>2</td><td><a href="#mix">ミックス</a></td></tr>
+          <tr><td>3</td><td><a href="#munchkin">マンチカン</a></td></tr>
+          <tr><td>4</td><td><a href="#ragdoll">ラグドール</a></td></tr>
+          <tr><td>5</td><td><a href="#minuet">ミヌエット</a></td></tr>
+          <tr><td>6</td><td><a href="#siberian">サイベリアン</a></td></tr>
+          <tr><td>7</td><td><a href="#british">ブリティッシュショートヘア</a></td></tr>
+          <tr><td>8</td><td><a href="#american-sh">アメリカンショートヘアー</a></td></tr>
+          <tr><td>9</td><td><a href="#norwegian">ノルウェージャン</a></td></tr>
+          <tr><td>10</td><td><a href="#ragamuffin">ラガマフィン</a></td></tr>
+        </tbody>
+      </table>
+
+      <table class="ranking-table">
+        <caption>11〜20位</caption>
+        <thead>
+          <tr><th>順位</th><th>種類</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>11</td><td><a href="#bengal">ベンガル</a></td></tr>
+          <tr><td>12</td><td><a href="#mainecoon">メインクーン</a></td></tr>
+          <tr><td>13</td><td><a href="#russian">ロシアンブルー</a></td></tr>
+          <tr><td>14</td><td><a href="#exotic-sh">エキゾチック</a></td></tr>
+          <tr><td>15</td><td><a href="#chinchilla">チンチラ</a></td></tr>
+          <tr><td>16</td><td><a href="#american-curl">アメリカンカール</a></td></tr>
+          <tr><td>17</td><td><a href="#persian">ペルシャ</a></td></tr>
+          <tr><td>18</td><td><a href="#somali">ソマリ</a></td></tr>
+          <tr><td>19</td><td><a href="#exotic-long">エキゾチックロングヘアー</a></td></tr>
+          <tr><td>20</td><td><a href="#japanese">日本猫</a></td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <!-- 種類説明 -->
+  <h2>種類別説明</h2>
+  <p class="intro-text">
+    世界中で愛されている猫たちを、人気順に紹介します。<br>
+    気になる猫をクリックすると、詳しい説明ページへ移動できます。
+  </p>
+
+  <section class="types-grid">
+
+<a href="スコティッシュフォールド.html" class="type-card" id="scottish">
+<img src="images/1スコティッシュフォールド.jpg">
+<span>1位 スコティッシュフォールド</span>
+</a>
+
+<a href="ミックス.html" class="type-card" id="mix">
+<img src="images/2ミックス.jpg">
+<span>2位 ミックス</span>
+</a>
+
+<a href="マンチカン.html" class="type-card" id="munchkin">
+<img src="images/3マンチカン.jpg">
+<span>3位 マンチカン</span>
+</a>
+
+<a href="ラグドール.html" class="type-card" id="ragdoll">
+<img src="images/4ラグドール.jpg">
+<span>4位 ラグドール</span>
+</a>
+
+<a href="ミヌエット.html" class="type-card" id="minuet">
+<img src="images/5ミヌエット.jpg">
+<span>5位 ミヌエット</span>
+</a>
+
+<a href="サイベリアン.html" class="type-card" id="siberian">
+<img src="images/6サイベリアン.jpg">
+<span>6位 サイベリアン</span>
+</a>
+
+<a href="ブリティッシュショートヘア.html" class="type-card" id="british">
+<img src="images/7ブリティッシュショートヘア.jpg">
+<span>7位 ブリティッシュショートヘア</span>
+</a>
+
+<a href="アメリカンショートヘアー.html" class="type-card" id="american-sh">
+<img src="images/8アメリカンショートヘアー.jpg">
+<span>8位 アメリカンショートヘアー</span>
+</a>
+
+<a href="ノルウェージャンフォレストキャット.html" class="type-card" id="norwegian">
+<img src="images/9ノルウェージャンフォレストキャット.jpg">
+<span>9位 ノルウェージャンフォレストキャット</span>
+</a>
+
+<a href="ラガマフィン.html" class="type-card" id="ragamuffin">
+<img src="images/10ラガマフィン.jpg">
+<span>10位 ラガマフィン</span>
+</a>
+
+<a href="ベンガル.html" class="type-card" id="bengal">
+<img src="images/11ベンガル.jpg">
+<span>11位 ベンガル</span>
+</a>
+
+<a href="メインクーン.html" class="type-card" id="mainecoon">
+<img src="images/12メインクーン.jpg">
+<span>12位 メインクーン</span>
+</a>
+
+<a href="ロシアンブルー.html" class="type-card" id="russian">
+<img src="images/13ロシアンブルー.jpg">
+<span>13位 ロシアンブルー</span>
+</a>
+
+<a href="エキゾチックショートヘアー.html" class="type-card" id="exotic-sh">
+<img src="images/14エキゾチックショートヘア.jpg">
+<span>14位 エキゾチックショートヘア</span>
+</a>
+
+<a href="チンチラ.html" class="type-card" id="chinchilla">
+<img src="images/15チンチラ.jpg">
+<span>15位 チンチラ</span>
+</a>
+
+<a href="アメリカンカール.html" class="type-card" id="american-curl">
+<img src="images/16アメリカンカール.jpg">
+<span>16位 アメリカンカール</span>
+</a>
+
+<a href="ペルシャ.html" class="type-card" id="persian">
+<img src="images/17ペルシャ.jpg">
+<span>17位 ペルシャ</span>
+</a>
+
+<a href="ソマリ.html" class="type-card" id="somali">
+<img src="images/18ソマリ.jpg">
+<span>18位 ソマリ</span>
+</a>
+
+<a href="エキゾチックロングヘアー.html" class="type-card" id="exotic-long">
+<img src="images/19エキゾチックロングヘアー.jpg">
+<span>19位 エキゾチックロングヘアー</span>
+</a>
+
+<a href="日本猫.html" class="type-card" id="japanese">
+<img src="images/20日本猫.jpg">
+<span>20位 日本猫</span>
+</a>
+
+</section>
+</main>
+
+<script src="paw.js"></script>
+<script src="highlight.js"></script>
+<script src="bgm.js"></script>
+
+
+</body>
+</html>
